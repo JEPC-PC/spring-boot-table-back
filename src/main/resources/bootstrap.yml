@@ -1,0 +1,20 @@
+
+server:
+  port : 8087
+spring:
+  application:
+    name: table-API-backend
+
+  config:
+    import: optional:configserver:${CONFIG_SERVER}
+  cloud:
+    config:
+      failFast: false
+      username: ${MY_APP_USER}
+      password: ${MY_APP_PASS}
+      uri: ${CONFIG_SERVER}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: "http://localhost:8761/eureka"  
